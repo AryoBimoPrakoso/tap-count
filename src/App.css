@@ -58,6 +58,51 @@ button {
   justify-content: space-between;
 }
 
+.target-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  cursor: default;
+}
+
+.target-control label {
+  color: #527665;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.target-control input {
+  width: 78px;
+  height: 38px;
+  border: 1px solid #d3e5da;
+  border-radius: 10px;
+  padding: 0 10px;
+  color: #315b49;
+  background: rgba(255, 255, 255, 0.82);
+  font-weight: 750;
+  outline: none;
+}
+
+.target-control input:focus {
+  border-color: #86b99a;
+  box-shadow: 0 0 0 3px rgba(83, 158, 119, 0.12);
+}
+
+.target-control button {
+  height: 38px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 12px;
+  color: #ffffff;
+  background: #639a78;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
 .counter-eyebrow {
   margin: 0;
   color: #527665;
@@ -184,6 +229,102 @@ button {
   color: #668575;
   font-size: 0.82rem;
   font-weight: 650;
+}
+
+.target-progress {
+  margin: 14px 0 -12px;
+  color: #668575;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.completion-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(38, 69, 54, 0.24);
+  backdrop-filter: blur(8px);
+  cursor: default;
+  animation: fade-in 180ms ease-out;
+}
+
+.completion-modal {
+  width: min(390px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 28px;
+  padding: 32px;
+  text-align: center;
+  color: #315b49;
+  background: #f8fcf9;
+  box-shadow: 0 24px 70px rgba(42, 83, 61, 0.24);
+  animation: modal-in 220ms ease-out;
+}
+
+.completion-icon {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #77a98a;
+  box-shadow: 0 12px 28px rgba(92, 148, 115, 0.24);
+}
+
+.completion-icon svg {
+  width: 34px;
+  height: 34px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.completion-kicker {
+  margin: 0 0 6px;
+  color: #739080;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.completion-modal h2 {
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 1;
+}
+
+.completion-modal p:not(.completion-kicker) {
+  margin: 14px 0 22px;
+  color: #668575;
+}
+
+.completion-modal button {
+  min-height: 46px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 22px;
+  color: #ffffff;
+  background: #639a78;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(79, 132, 103, 0.18);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @media (max-width: 520px) {
